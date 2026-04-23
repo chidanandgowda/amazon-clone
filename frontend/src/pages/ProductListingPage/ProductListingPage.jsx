@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '../../components/ProductCard';
+import Recommendations from '../../components/Recommendations';
 import api from '../../services/api';
 import './ProductListingPage.css';
 
@@ -54,6 +55,8 @@ function ProductListingPage({ title, subtitle, badgeType }) {
           {subtitle || 'Discover top-rated products across electronics, home, and fashion.'}
         </p>
       </div>
+
+      {!badgeType && <Recommendations />}
 
       {/* Product Grid */}
       {products.length === 0 ? (

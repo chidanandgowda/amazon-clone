@@ -1,6 +1,7 @@
 import { useCart } from '../../context/CartContext';
 import CartItem from '../../components/Cart/CartItem';
 import OrderSummary from '../../components/Cart/OrderSummary';
+import Recommendations from '../../components/Recommendations';
 import './ShoppingCartPage.css';
 
 function ShoppingCartPage() {
@@ -75,6 +76,9 @@ function ShoppingCartPage() {
           </div>
         </div>
       )}
+
+      {/* Recommendations Section */}
+      <Recommendations title="You might also like" />
     </main>
   );
 }

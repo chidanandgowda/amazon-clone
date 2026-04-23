@@ -1,0 +1,34 @@
+.recommendations-section {
+  padding: 32px 0;
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 24px 0;
+}
+
+.recommendations-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.recommendations-container h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f1111;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.recommendations-loading {
+  padding: 40px;
+  text-align: center;
+  color: #565959;
+  font-size: 16px;
+}

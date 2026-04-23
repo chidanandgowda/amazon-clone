@@ -17,6 +17,17 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET /api/products/recommendations - get 4 random products for suggestions
+router.get('/recommendations/list', async (req, res) => {
+  try {
+    const products = await Product.aggregate([{ $sample: { size: 4 } }]);
+    res.json(products);
+  } catch (error) {
+    console.error('Error fetching recommendations:', error);
+    res.status(500).json({ message: 'Server error fetching recommendations' });
+  }
+});
+
 // GET /api/products/:id — single product full detail
 router.get('/:id', async (req, res) => {
   try {

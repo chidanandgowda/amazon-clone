@@ -1,6 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import Assistant from './components/Assistant';
 import { CartProvider } from './context/CartContext';
 import InfoPage from './pages/InfoPage/InfoPage';
 import ProductDetailPage from './pages/ProductDetailPage';
@@ -13,6 +14,7 @@ function App() {
     <Router>
       <CartProvider>
         <Navbar />
+        <Assistant />
         <Routes>
           <Route path="/" element={<ProductListingPage />} />
           <Route
