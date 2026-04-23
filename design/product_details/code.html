@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProCommerce - Product Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#8a97a9",
+                        "background": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#38485b",
+                        "primary-fixed-dim": "#bbc7db",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "outline": "#75777c",
+                        "on-primary-fixed-variant": "#3c4858",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed": "#d7e3f7",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#0e1a28",
+                        "secondary-container": "#febd69",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-low": "#f3f3f3",
+                        "on-primary-fixed": "#101c2b",
+                        "on-background": "#1a1c1c",
+                        "inverse-primary": "#bbc7db",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#774b00",
+                        "outline-variant": "#c5c6cc",
+                        "tertiary-fixed": "#d3e4fc",
+                        "tertiary": "#091a2b",
+                        "secondary": "#845403",
+                        "tertiary-container": "#1f2f41",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#44474c",
+                        "surface-container": "#eeeeee",
+                        "tertiary-fixed-dim": "#b7c8df",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-container": "#8697ad",
+                        "secondary-fixed": "#ffddb7",
+                        "on-tertiary-fixed": "#0b1d2e",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "secondary-fixed-dim": "#fbba67",
+                        "surface-variant": "#e2e2e2",
+                        "primary-container": "#232f3e",
+                        "surface-tint": "#535f70",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-secondary-fixed": "#2a1700",
+                        "surface": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1500px",
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "xl": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["21px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar Component -->
+<nav class="bg-[#232f3e] dark:bg-slate-950 flex flex-col w-full sticky top-0 z-50 font-['Inter'] text-sm antialiased border-b border-slate-700 dark:border-slate-800">
+<!-- Main Top Row -->
+<div class="flex items-center justify-between px-md py-sm w-full max-w-container-max mx-auto">
+<!-- Brand -->
+<a class="text-2xl font-black text-white tracking-tight mr-lg shrink-0" href="#">ProCommerce</a>
+<!-- Search Bar (on_right logic but expanded to fill) -->
+<div class="flex-1 max-w-3xl mx-lg hidden md:flex items-center">
+<div class="flex w-full bg-surface-container-lowest rounded-DEFAULT overflow-hidden border border-outline-variant focus-within:border-secondary-container focus-within:ring-1 focus-within:ring-secondary-container transition-all">
+<select class="bg-surface-container-low text-on-surface-variant border-none px-sm py-xs text-sm focus:ring-0 cursor-pointer hidden lg:block">
+<option>All Departments</option>
+</select>
+<input class="flex-1 px-md py-sm text-on-surface border-none focus:ring-0 outline-none w-full" placeholder="Search products..." type="text"/>
+<button class="bg-[#febd69] hover:bg-secondary-fixed-dim text-on-secondary-container px-lg flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">search</span>
+</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-md shrink-0 text-white">
+<a class="flex flex-col items-center justify-center hover:ring-1 hover:ring-white transition-all duration-150 p-xs rounded cursor-pointer" href="#">
+<span class="text-xs text-slate-300">Hello, Sign in</span>
+<span class="font-bold">Account</span>
+</a>
+<a class="flex items-center gap-xs hover:ring-1 hover:ring-white transition-all duration-150 p-xs rounded cursor-pointer" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-3xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-[#febd69] text-on-secondary-container text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+</div>
+<span class="font-bold hidden md:inline">Cart</span>
+</a>
+</div>
+</div>
+<!-- Secondary Navigation Row -->
+<div class="bg-primary-container text-white px-md flex items-center gap-lg overflow-x-auto whitespace-nowrap hide-scrollbar">
+<div class="flex items-center max-w-container-max mx-auto w-full gap-lg pt-2">
+<a class="text-white font-bold border-b-2 border-[#febd69] pb-1 cursor-pointer active:scale-95 transition-all" href="#">All</a>
+<a class="text-slate-200 hover:text-white pb-1 cursor-pointer hover:ring-1 hover:ring-white transition-all duration-150 active:scale-95" href="#">Best Sellers</a>
+<a class="text-slate-200 hover:text-white pb-1 cursor-pointer hover:ring-1 hover:ring-white transition-all duration-150 active:scale-95" href="#">Deals</a>
+<a class="text-slate-200 hover:text-white pb-1 cursor-pointer hover:ring-1 hover:ring-white transition-all duration-150 active:scale-95" href="#">Customer Service</a>
+<a class="text-slate-200 hover:text-white pb-1 cursor-pointer hover:ring-1 hover:ring-white transition-all duration-150 active:scale-95" href="#">Registry</a>
+<a class="text-slate-200 hover:text-white pb-1 cursor-pointer hover:ring-1 hover:ring-white transition-all duration-150 active:scale-95" href="#">Gift Cards</a>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-md md:px-lg py-xl">
+<!-- Breadcrumbs -->
+<nav class="mb-lg text-body-sm font-body-sm text-on-surface-variant flex items-center gap-xs">
+<a class="hover:underline" href="#">Electronics</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:underline" href="#">Audio</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:underline" href="#">Headphones</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface">Premium Noise-Canceling</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Left Column: Image Gallery -->
+<div class="lg:col-span-7 flex flex-col gap-md">
+<!-- Main Image -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg flex items-center justify-center min-h-[500px]">
+<img alt="Premium over-ear noise-canceling headphones in sleek matte black finish" class="max-w-full h-auto object-contain max-h-[600px]" data-alt="Premium over-ear noise-canceling headphones in sleek matte black finish resting on a clean white surface with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRIbYpb70EI6d1Z7ludWwJA70OBMMXtxOGwzu-gDQJ8eRwdBC71QtrUcjJXNkVFTFkvj8UbKjlj_x8SCFgoW7yh58_tBlo2MQWIavc3ZvhpZRtnSDtbwUOqWh6t3ZWPoGdVW8YJjsdxBgCBjNeeCTB9fh2UI1xcFMrGK06funBsYpL64T5gRxoJ0T49QAiZrkJdPBjbva34v0xa8Ll6jZBAMHvYdOjG2RPAXY_Hy_b7Q_EwTPuTLadnu2-NcVnoJ05SiJdxysC7uM"/>
+</div>
+<!-- Thumbnails -->
+<div class="grid grid-cols-5 gap-sm">
+<button class="bg-surface-container-lowest border-2 border-secondary-container rounded p-sm aspect-square flex items-center justify-center">
+<img alt="Thumbnail 1" class="max-w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdWB4xyAssRvflsHllRDJyGoh3KU44PvJmaIaIWr0inqTiWsh_mXLbrkWT1uUP1DiNoMgEOyeajaTr1Ed0pQNOJ-on9iQnV64O9t5UPrACC8bvrSfTNq_E4JQA-7I7TFggwxR6t87norVa-D3RmUFOE-jwr3KqXz2q_-ldtR_f2NP9n9LO3rkzSlgAm_7B90zFWdal9ZUVHEPowRgsl7GTPi-mbPWKnkibOhAEf47HEuItosjDVUuO3maH8sX-tRPFon6BWMwTSnc"/>
+</button>
+<button class="bg-surface-container-lowest border border-outline-variant hover:border-outline rounded p-sm aspect-square flex items-center justify-center">
+<img alt="Thumbnail 2" class="max-w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKY3ftGao6Y2gMTk4V3J1bbzi4rlA8vXQbXyPuSbPg_9v29BsRrvwyDYKst3ZXHEgHmMaEr2_6Fi56gJ6ZVWiIpmeaHSjtawh4KQ27IohOmY5gkDzggobMS4GtzJb51zOcZzJfdPfsAor0-XyNmLMSot6rIRjXm2MdsnO5WShIiOMPt-ArxkusC9Ka8picm4Ftkl-0cuaLTHXGI_sG0XMOBT9yamhFpKyd0x9Wq89VQEiBzeMyZrrsWEvTjVCBfYzMs78G8eMrRjU"/>
+</button>
+<button class="bg-surface-container-lowest border border-outline-variant hover:border-outline rounded p-sm aspect-square flex items-center justify-center">
+<img alt="Thumbnail 3" class="max-w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDNovIE4uvEKWNGJpMKPbou0nqRURC2gb7IWN9pGl5FLMOPbXkG6ga3u8Jm7OYa_AGWhBynXh7m7-8vgiH7QIrxNPmrs5v1ekW_0CU17xHx86-FkZdySXBNvi3mwcocA25ZGfgSLFDphw6o2bSPa__Zw0Fdnb2zhnZOOqL9wXPi2kEy2sQd1nkI1aHBnDYiUN6FVPRTy-4KZ18c3UmNzWw_YsbfVFBW5AqwS5rUBhKXMVF4b-JqymIKhU62q60o2nKyj6Yo7TVflM"/>
+</button>
+<button class="bg-surface-container-lowest border border-outline-variant hover:border-outline rounded p-sm aspect-square flex items-center justify-center">
+<div class="w-full h-full bg-surface-container flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-outline">play_circle</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Right Column: Product Details & Action -->
+<div class="lg:col-span-5 flex flex-col">
+<!-- Title & Rating -->
+<div class="mb-lg border-b border-surface-variant pb-md">
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-sm">SonicPro Ultra - Premium Active Noise Canceling Wireless Headphones</h1>
+<a class="text-primary hover:underline text-body-sm mb-xs block" href="#">Visit the SonicPro Store</a>
+<div class="flex items-center gap-sm mt-xs">
+<div class="flex text-[#febd69]">
+<span class="material-symbols-outlined text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg">star_half</span>
+</div>
+<span class="text-primary hover:underline text-body-sm cursor-pointer">4,821 ratings</span>
+<span class="text-outline-variant">|</span>
+<span class="text-primary hover:underline text-body-sm cursor-pointer">152 answered questions</span>
+</div>
+<div class="mt-sm">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs text-xs font-bold rounded-sm uppercase tracking-wider">#1 Best Seller</span>
+<span class="text-body-sm text-on-surface-variant ml-sm">in Over-Ear Headphones</span>
+</div>
+</div>
+<!-- Price Area -->
+<div class="mb-lg">
+<div class="flex items-start gap-xs">
+<span class="text-body-md relative top-1 text-on-surface">$</span>
+<span class="text-[32px] leading-none font-bold text-on-surface">299</span>
+<span class="text-body-md relative top-1 text-on-surface">99</span>
+</div>
+<div class="text-body-sm text-on-surface-variant mt-xs">List Price: <span class="line-through">$349.99</span></div>
+<div class="text-body-sm font-label-md text-on-surface mt-xs">FREE Returns</div>
+</div>
+<!-- Variants -->
+<div class="mb-lg">
+<span class="text-body-sm font-label-md text-on-surface block mb-xs">Color: <span class="font-normal">Matte Black</span></span>
+<div class="flex gap-sm">
+<button class="w-10 h-10 rounded-full border-2 border-secondary-container bg-black shadow-sm outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-container"></button>
+<button class="w-10 h-10 rounded-full border border-outline-variant bg-gray-300 shadow-sm outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-container hover:border-outline"></button>
+<button class="w-10 h-10 rounded-full border border-outline-variant bg-[#e6e6fa] shadow-sm outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-container hover:border-outline"></button>
+</div>
+</div>
+<!-- Buy Box / Action Area (Card styling) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg shadow-sm mb-lg">
+<div class="text-headline-md font-headline-md text-on-surface mb-sm">$299.99</div>
+<div class="text-body-sm mb-md text-on-surface">
+<span class="text-[#007185] hover:underline cursor-pointer">FREE delivery</span> <strong>Tomorrow, Oct 25</strong>. Order within <span class="text-[#007600]">2 hrs 30 mins</span>
+</div>
+<div class="flex items-center gap-xs mb-md">
+<span class="material-symbols-outlined text-[#007185] text-lg">location_on</span>
+<span class="text-body-sm text-[#007185] hover:underline cursor-pointer">Deliver to New York 10001</span>
+</div>
+<div class="text-headline-md font-headline-md text-[#007600] mb-md">In Stock</div>
+<div class="mb-md">
+<label class="sr-only" for="quantity">Quantity</label>
+<select class="bg-surface-container-low border border-outline-variant rounded px-sm py-xs text-sm focus:ring-1 focus:ring-secondary-container outline-none" id="quantity">
+<option>Qty: 1</option>
+<option>Qty: 2</option>
+<option>Qty: 3</option>
+</select>
+</div>
+<div class="flex flex-col gap-sm">
+<button class="bg-[#febd69] hover:bg-secondary-fixed-dim text-on-background w-full py-sm rounded-full font-label-md text-label-md shadow-sm transition-colors flex items-center justify-center gap-sm">
+                            Add to Cart
+                        </button>
+<button class="bg-[#ffa41c] hover:bg-[#fa9905] text-on-background w-full py-sm rounded-full font-label-md text-label-md shadow-sm transition-colors flex items-center justify-center gap-sm">
+                            Buy Now
+                        </button>
+</div>
+<div class="mt-md text-body-sm flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Secure transaction</span>
+</div>
+<div class="mt-sm grid grid-cols-[auto_1fr] gap-x-sm gap-y-xs text-body-sm">
+<span class="text-on-surface-variant">Ships from</span>
+<span class="text-on-surface">ProCommerce</span>
+<span class="text-on-surface-variant">Sold by</span>
+<span class="text-on-surface">ProCommerce</span>
+<span class="text-on-surface-variant">Returns</span>
+<span class="text-[#007185] hover:underline cursor-pointer">Returnable until Jan 31</span>
+</div>
+</div>
+<!-- Product Description / Details -->
+<div class="border-t border-surface-variant pt-md">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-sm">About this item</h2>
+<ul class="list-disc pl-lg text-body-md font-body-md text-on-surface flex flex-col gap-sm">
+<li><strong>Industry-Leading Noise Cancellation:</strong> Advanced dual-sensor technology blocks out background noise, allowing you to focus completely on your music or calls.</li>
+<li><strong>High-Resolution Audio:</strong> Custom 40mm drivers deliver crisp highs, detailed mids, and deep, resonant bass for a premium listening experience.</li>
+<li><strong>Long-Lasting Battery:</strong> Enjoy up to 40 hours of continuous playback on a single charge. A quick 10-minute charge provides up to 4 hours of listening time.</li>
+<li><strong>All-Day Comfort:</strong> Plush memory foam ear cushions and a lightweight, adjustable headband ensure maximum comfort during extended wear.</li>
+<li><strong>Crystal Clear Calls:</strong> Built-in multi-microphone system isolates your voice from surrounding noise for pristine call quality, even in windy conditions.</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-[#232f3e] dark:bg-slate-950 w-full py-10 px-4 md:px-20 flex flex-col items-center space-y-6 full-width border-t border-slate-700 tonal shift with dark navy background mt-auto">
+<div class="text-xl font-bold text-white mb-sm">ProCommerce</div>
+<div class="flex flex-wrap justify-center gap-md md:gap-lg mb-sm">
+<a class="font-['Inter'] text-xs text-[#febd69] underline cursor-pointer hover:underline hover:text-white" href="#">Conditions of Use</a>
+<a class="font-['Inter'] text-xs text-slate-300 cursor-pointer hover:underline hover:text-white" href="#">Privacy Notice</a>
+<a class="font-['Inter'] text-xs text-slate-300 cursor-pointer hover:underline hover:text-white" href="#">Your Ads Privacy Choices</a>
+<a class="font-['Inter'] text-xs text-slate-300 cursor-pointer hover:underline hover:text-white" href="#">Accessibility</a>
+</div>
+<div class="font-['Inter'] text-xs text-white text-center">
+            © 2024 ProCommerce, Inc. or its affiliates
+        </div>
+</footer>
+</body></html>

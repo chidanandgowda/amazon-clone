@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProCommerce - All Products</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#8a97a9",
+                        "background": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#38485b",
+                        "primary-fixed-dim": "#bbc7db",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "outline": "#75777c",
+                        "on-primary-fixed-variant": "#3c4858",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed": "#d7e3f7",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#0e1a28",
+                        "secondary-container": "#febd69",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-low": "#f3f3f3",
+                        "on-primary-fixed": "#101c2b",
+                        "on-background": "#1a1c1c",
+                        "inverse-primary": "#bbc7db",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#774b00",
+                        "outline-variant": "#c5c6cc",
+                        "tertiary-fixed": "#d3e4fc",
+                        "tertiary": "#091a2b",
+                        "secondary": "#845403",
+                        "tertiary-container": "#1f2f41",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#44474c",
+                        "surface-container": "#eeeeee",
+                        "tertiary-fixed-dim": "#b7c8df",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-container": "#8697ad",
+                        "secondary-fixed": "#ffddb7",
+                        "on-tertiary-fixed": "#0b1d2e",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "secondary-fixed-dim": "#fbba67",
+                        "surface-variant": "#e2e2e2",
+                        "primary-container": "#232f3e",
+                        "surface-tint": "#535f70",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-secondary-fixed": "#2a1700",
+                        "surface": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1500px",
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "xl": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["21px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="flex flex-col w-full sticky top-0 z-50 bg-[#232f3e] dark:bg-slate-950 border-b border-slate-700 dark:border-slate-800">
+<div class="flex items-center justify-between px-md py-sm">
+<!-- Brand -->
+<div class="text-2xl font-black text-white tracking-tight cursor-pointer">
+                ProCommerce
+            </div>
+<!-- Search Bar (Right aligned structurally before actions) -->
+<div class="flex-1 max-w-2xl mx-md hidden md:flex items-center h-10 rounded-DEFAULT overflow-hidden border border-outline-variant focus-within:border-secondary-container focus-within:ring-1 focus-within:ring-secondary-container">
+<input aria-label="Search" class="w-full h-full px-sm border-none focus:ring-0 text-on-surface bg-surface-container-lowest font-body-md text-body-md" placeholder="Search ProCommerce" type="text"/>
+<button aria-label="Search Submit" class="bg-secondary-container text-on-secondary-container h-full px-md flex items-center justify-center hover:bg-secondary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+</div>
+<!-- Actions -->
+<div class="flex items-center space-x-md text-white">
+<div class="hidden sm:flex flex-col cursor-pointer hover:ring-1 hover:ring-white transition-all duration-150 p-sm rounded-DEFAULT">
+<span class="font-body-sm text-body-sm text-slate-200">Hello, sign in</span>
+<span class="font-label-md text-label-md font-bold">Account</span>
+</div>
+<!-- Icon Actions -->
+<div class="flex space-x-sm">
+<button aria-label="person" class="relative p-sm flex items-center justify-center cursor-pointer hover:ring-1 hover:ring-white transition-all duration-150 rounded-DEFAULT active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+</button>
+<button aria-label="Cart" class="relative p-sm flex items-center justify-center cursor-pointer hover:ring-1 hover:ring-white transition-all duration-150 rounded-DEFAULT active:scale-95">
+<span class="material-symbols-outlined text-[#febd69] dark:text-orange-400" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded-full w-4 h-4 flex items-center justify-center">0</span>
+<span class="hidden sm:inline-block ml-xs font-label-md text-label-md text-white font-bold">Cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex items-center px-md space-x-lg overflow-x-auto whitespace-nowrap bg-[#232f3e] dark:bg-slate-950 text-sm antialiased font-['Inter'] hide-scrollbar">
+<a class="text-white font-bold border-b-2 border-[#febd69] pb-1 hover:ring-1 hover:ring-white transition-all duration-150 active:scale-95 cursor-pointer inline-flex items-center h-full pt-2" href="#">All</a>
+<a class="text-slate-200 hover:text-white pb-1 hover:ring-1 hover:ring-white transition-all duration-150 active:scale-95 cursor-pointer inline-flex items-center h-full pt-2" href="#">Best Sellers</a>
+<a class="text-slate-200 hover:text-white pb-1 hover:ring-1 hover:ring-white transition-all duration-150 active:scale-95 cursor-pointer inline-flex items-center h-full pt-2" href="#">Deals</a>
+<a class="text-slate-200 hover:text-white pb-1 hover:ring-1 hover:ring-white transition-all duration-150 active:scale-95 cursor-pointer inline-flex items-center h-full pt-2" href="#">Customer Service</a>
+<a class="text-slate-200 hover:text-white pb-1 hover:ring-1 hover:ring-white transition-all duration-150 active:scale-95 cursor-pointer inline-flex items-center h-full pt-2" href="#">Registry</a>
+<a class="text-slate-200 hover:text-white pb-1 hover:ring-1 hover:ring-white transition-all duration-150 active:scale-95 cursor-pointer inline-flex items-center h-full pt-2" href="#">Gift Cards</a>
+</nav>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-gutter py-xl">
+<div class="mb-lg">
+<h1 class="font-headline-xl text-headline-xl text-on-background">Explore All Categories</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm">Discover top-rated products across electronics, home, and fashion.</p>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col relative group hover:shadow-md transition-shadow duration-200">
+<div class="absolute top-sm left-sm bg-error text-on-error font-label-sm text-label-sm px-2 py-1 rounded-sm uppercase z-10">Limited Time Deal</div>
+<div class="w-full h-48 mb-md rounded-DEFAULT overflow-hidden bg-surface-container-low flex items-center justify-center relative">
+<img alt="White smart watch" class="object-contain h-full w-full mix-blend-multiply transition-transform duration-300 group-hover:scale-105" data-alt="close-up of sleek white minimalist smart watch on clean light gray background with soft diffused lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrW4QPExgXsaPcAupsvmmkVloFKHXBao-FYWplAE0kIkQ9GRYb-X5ez37Woo3bGLBHUtaDb1CCkkVCxv8ax_eDEWJrJarB4GGdwydOL12IXiAshpdwYE9dhuU6igJt6cIArSEaIBfT4Jk7CgY7H5f7MhsRgyegjpItKO1OU38zJzZNfSfNsyN05sjV3IA-YQ9LRGAloN6f-9zxsgf4A-gQ7vSiOBOnOvbEL7SiYp-sIQfJFxulvXl005U4Z3y_7BOdnGayprY8cMQ"/>
+</div>
+<div class="flex-1 flex flex-col">
+<h2 class="font-label-md text-label-md text-on-background line-clamp-2 mb-sm">Pro Series Smart Watch 5 - Fitness Tracker with Heart Rate Monitor, White</h2>
+<div class="flex items-center mb-sm">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">star_half</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-xs">(1,245)</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-background mb-md">$149.99</div>
+<button class="mt-auto w-full bg-secondary-container text-on-secondary-container font-label-md text-label-md py-sm rounded-DEFAULT hover:bg-secondary-fixed-dim transition-colors border border-transparent">
+                        View Details
+                    </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col relative group hover:shadow-md transition-shadow duration-200">
+<div class="w-full h-48 mb-md rounded-DEFAULT overflow-hidden bg-surface-container-low flex items-center justify-center relative">
+<img alt="Wireless Headphones" class="object-contain h-full w-full mix-blend-multiply transition-transform duration-300 group-hover:scale-105" data-alt="premium over-ear wireless headphones in matte black on subtle dark gradient background studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr4YWcO0U9zvI-uYaJc115bGIokqSNcX1LzDsZRpBLMktGaNc8rm9lul9dIYi1tasNL_kePnUomWcV8XBdGQfb15Wf5lUMt-s774bbAFTx3XGQXal9n4ETQ76IyWzPx_BHs2lNeUXOGADsjhGPVqR9JUl96lrFTEyEZfi026AfvK90cYAI0WGc6zHckBMqVd8ldCLVvOhX7mU2GNfvR3X4iZFK7CILBB7wwAYFdJWaKE4s4NqROAoe84tiWhqAGBj0tkE_sz3r8kQ"/>
+</div>
+<div class="flex-1 flex flex-col">
+<h2 class="font-label-md text-label-md text-on-background line-clamp-2 mb-sm">Acoustic Noise Cancelling Over-Ear Wireless Headphones, Matte Black</h2>
+<div class="flex items-center mb-sm">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-xs">(8,902)</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-background mb-md">$299.00</div>
+<button class="mt-auto w-full bg-secondary-container text-on-secondary-container font-label-md text-label-md py-sm rounded-DEFAULT hover:bg-secondary-fixed-dim transition-colors border border-transparent">
+                        View Details
+                    </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col relative group hover:shadow-md transition-shadow duration-200">
+<div class="absolute top-sm left-sm bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-1 rounded-sm uppercase z-10 font-bold">Best Seller</div>
+<div class="w-full h-48 mb-md rounded-DEFAULT overflow-hidden bg-surface-container-low flex items-center justify-center relative">
+<img alt="Red Sneaker" class="object-contain h-full w-full mix-blend-multiply transition-transform duration-300 group-hover:scale-105" data-alt="vibrant red athletic running shoe isolated on white background with crisp natural shadows and high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkg_r4QdHXRr4PTlgvrW-f5iJvvpVMOQ0_iCVRMYu5WI2PoVnsTO5vY6_wTeU86mUcu0bqW7vsAjNp5yG5Lzq3nArgt_vr8Ey08_R55Lu1KlkXB5AhOGn5ClXmjW72n73XVDe9yYzQouXhquSVT6zZanXhpZYCc271ZTvvBQRyk7fZvXe-wATAJwQaDH2D-SHH6lINmft5hOi8ZelwnxybSqX0lJDL1licWt7iPEC3xULthXolTWOhicjYOhyZDFqx_dhU51nC1fM"/>
+</div>
+<div class="flex-1 flex flex-col">
+<h2 class="font-label-md text-label-md text-on-background line-clamp-2 mb-sm">Men's Swift Run Everyday Performance Sneakers, Cardinal Red</h2>
+<div class="flex items-center mb-sm">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">star_border</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-xs">(452)</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-background mb-md">$85.00</div>
+<button class="mt-auto w-full bg-secondary-container text-on-secondary-container font-label-md text-label-md py-sm rounded-DEFAULT hover:bg-secondary-fixed-dim transition-colors border border-transparent">
+                        View Details
+                    </button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col relative group hover:shadow-md transition-shadow duration-200">
+<div class="w-full h-48 mb-md rounded-DEFAULT overflow-hidden bg-surface-container-low flex items-center justify-center relative">
+<img alt="Minimalist Lamp" class="object-contain h-full w-full mix-blend-multiply transition-transform duration-300 group-hover:scale-105" data-alt="modern minimalist brass desk lamp throwing warm light on white table surface in clean airy room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-qmBLieYT40e_57zkxq_DnNYzPCHrCXOdtJ8rk9ekbt7x6K4hfLoy6BFNX1pnmcTfl8BwgNLzdeWgMx6cJ0Yr6-2A9OJCB0S9gb-_6ldfJZ52zAxiujX0Dm1EmZ1PIkyVHVhpR1kcPhw9jhQ-qRS8N8KKe5FQDCuiEkMBvBCleYMHcEWJ-78fmzFPihzlXgPJECEi9uRs7ztbNnDM0xdnhCttns1IASh8IXOPf5refKm4hZEUan6p0NHMV4_kIfgng9IihqVD244"/>
+</div>
+<div class="flex-1 flex flex-col">
+<h2 class="font-label-md text-label-md text-on-background line-clamp-2 mb-sm">Modern Brass Desk Lamp with Adjustable Arm, Warm LED</h2>
+<div class="flex items-center mb-sm">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star_half</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">star_border</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-xs">(128)</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-background mb-md">$64.50</div>
+<button class="mt-auto w-full bg-secondary-container text-on-secondary-container font-label-md text-label-md py-sm rounded-DEFAULT hover:bg-secondary-fixed-dim transition-colors border border-transparent">
+                        View Details
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-10 px-4 md:px-20 flex flex-col items-center space-y-6 bg-[#232f3e] dark:bg-slate-950 font-['Inter'] text-xs text-white border-t border-slate-700 tonal shift with dark navy background mt-auto">
+<!-- Links -->
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+<a class="text-[#febd69] underline cursor-pointer hover:underline hover:text-white" href="#">Conditions of Use</a>
+<a class="text-slate-300 cursor-pointer hover:underline hover:text-white" href="#">Privacy Notice</a>
+<a class="text-slate-300 cursor-pointer hover:underline hover:text-white" href="#">Your Ads Privacy Choices</a>
+<a class="text-slate-300 cursor-pointer hover:underline hover:text-white" href="#">Accessibility</a>
+</div>
+<!-- Copyright -->
+<div class="text-slate-300">
+            © 2024 ProCommerce, Inc. or its affiliates
+        </div>
+</footer>
+</body></html>
