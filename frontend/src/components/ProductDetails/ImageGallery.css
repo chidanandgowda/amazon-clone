@@ -1,0 +1,104 @@
+/* ===== Image Gallery Component ===== */
+
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* --- Main Image --- */
+.image-gallery__main {
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+.image-gallery__main:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.image-gallery__main-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 600px;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.image-gallery__main:hover .image-gallery__main-img {
+  transform: scale(1.02);
+}
+
+/* --- Thumbnails Grid --- */
+.image-gallery__thumbs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--spacing-sm);
+}
+
+.image-gallery__thumb {
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-default);
+  padding: var(--spacing-sm);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+}
+.image-gallery__thumb:hover {
+  border-color: var(--color-outline);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.image-gallery__thumb--active {
+  border-width: 2px;
+  border-color: var(--color-secondary-container);
+}
+.image-gallery__thumb--active:hover {
+  border-color: var(--color-secondary-container);
+}
+
+.image-gallery__thumb-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.image-gallery__thumb-video {
+  width: 100%;
+  height: 100%;
+  background: var(--color-surface-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+.image-gallery__thumb-video .material-symbols-outlined {
+  color: var(--color-outline);
+  font-size: 28px;
+  transition: color 0.2s ease;
+}
+.image-gallery__thumb:hover .image-gallery__thumb-video .material-symbols-outlined {
+  color: var(--color-on-surface);
+}
+
+@media (max-width: 768px) {
+  .image-gallery__main {
+    min-height: 300px;
+    padding: var(--spacing-md);
+  }
+
+  .image-gallery__main-img {
+    max-height: 400px;
+  }
+}

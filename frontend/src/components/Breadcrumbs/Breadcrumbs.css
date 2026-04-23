@@ -1,0 +1,36 @@
+/* ===== Breadcrumbs Component ===== */
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-on-surface-variant);
+}
+
+.breadcrumbs__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.breadcrumbs__link {
+  color: var(--color-on-surface-variant);
+  transition: color 0.15s ease;
+}
+.breadcrumbs__link:hover {
+  text-decoration: underline;
+  color: var(--color-on-surface);
+}
+
+.breadcrumbs__separator {
+  font-size: 14px;
+  color: var(--color-outline);
+}
+
+.breadcrumbs__current {
+  color: var(--color-on-surface);
+  font-weight: 500;
+}

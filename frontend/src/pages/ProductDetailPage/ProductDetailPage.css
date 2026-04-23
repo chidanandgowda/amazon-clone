@@ -1,0 +1,74 @@
+/* ===== Product Detail Page Layout ===== */
+
+.pdp {
+  flex: 1;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .pdp {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+}
+
+.pdp__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 1024px) {
+  .pdp__grid {
+    grid-template-columns: 7fr 5fr;
+  }
+}
+
+.pdp__gallery-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.pdp__details-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Loading & Error States --- */
+.pdp__loading,
+.pdp__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: var(--spacing-md);
+  color: var(--color-on-surface-variant);
+  font-size: 16px;
+}
+
+.pdp__spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--color-outline-variant);
+  border-top-color: var(--color-secondary-container);
+  border-radius: 50%;
+  animation: pdpSpin 0.8s linear infinite;
+}
+
+@keyframes pdpSpin {
+  to { transform: rotate(360deg); }
+}
+
+.pdp__error-icon {
+  font-size: 48px;
+  color: var(--color-error);
+}
+
+.pdp__error-detail {
+  font-size: 12px;
+  color: var(--color-outline);
+}

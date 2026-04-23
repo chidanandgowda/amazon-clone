@@ -1,0 +1,195 @@
+/* ===== Buy Box Component ===== */
+
+.buy-box {
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-lg);
+  transition: box-shadow 0.3s ease;
+}
+.buy-box:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.buy-box__price {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--color-on-surface);
+  margin-bottom: var(--spacing-sm);
+}
+
+.buy-box__delivery {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-on-surface);
+  margin-bottom: var(--spacing-md);
+}
+
+.buy-box__delivery-link {
+  color: var(--color-link);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.buy-box__delivery-link:hover {
+  text-decoration: underline;
+}
+
+.buy-box__delivery-countdown {
+  color: var(--color-in-stock);
+  font-weight: 600;
+}
+
+.buy-box__location {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+
+.buy-box__location-icon {
+  color: var(--color-link);
+  font-size: 18px;
+}
+
+.buy-box__location-text {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-link);
+  cursor: pointer;
+}
+.buy-box__location-text:hover {
+  text-decoration: underline;
+}
+
+.buy-box__stock {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--color-in-stock);
+  margin-bottom: var(--spacing-md);
+}
+
+.buy-box__quantity {
+  margin-bottom: var(--spacing-md);
+}
+
+.buy-box__quantity-select {
+  background: var(--color-surface-container-low);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-default);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 14px;
+  color: var(--color-on-surface);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.buy-box__quantity-select:focus {
+  border-color: var(--color-secondary-container);
+  box-shadow: 0 0 0 1px var(--color-secondary-container);
+}
+
+/* --- Action Buttons --- */
+.buy-box__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.buy-box__btn {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-full);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+.buy-box__btn:active {
+  transform: scale(0.98);
+}
+
+.buy-box__btn--cart {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-background);
+}
+.buy-box__btn--cart:hover {
+  background-color: var(--color-secondary-fixed-dim);
+  box-shadow: var(--shadow-md);
+}
+
+.buy-box__btn--buy {
+  background-color: var(--color-buy-now);
+  color: var(--color-on-background);
+}
+.buy-box__btn--buy:hover {
+  background-color: var(--color-buy-now-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.buy-box__btn--added {
+  background-color: var(--color-in-stock);
+  color: #ffffff;
+}
+.buy-box__btn--added:hover {
+  background-color: var(--color-in-stock);
+}
+
+.buy-box__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- Secure & Meta --- */
+.buy-box__secure {
+  margin-top: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-on-surface-variant);
+}
+
+.buy-box__secure-icon {
+  font-size: 14px;
+}
+
+.buy-box__meta {
+  margin-top: var(--spacing-sm);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--spacing-sm) var(--spacing-sm);
+  row-gap: var(--spacing-xs);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.buy-box__meta-label {
+  color: var(--color-on-surface-variant);
+}
+
+.buy-box__meta-value {
+  color: var(--color-on-surface);
+}
+
+.buy-box__meta-value--link {
+  color: var(--color-link);
+  cursor: pointer;
+}
+.buy-box__meta-value--link:hover {
+  text-decoration: underline;
+}
