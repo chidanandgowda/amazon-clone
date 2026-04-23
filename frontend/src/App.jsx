@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import { CartProvider } from './context/CartContext';
+import AuthCallbackPage from './pages/AuthCallbackPage/AuthCallbackPage';
 import InfoPage from './pages/InfoPage/InfoPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import ProductListingPage from './pages/ProductListingPage';
@@ -72,6 +73,8 @@ function App() {
             }
           />
           <Route path="/signin" element={<SignInPage />} />
+          <Route path="/signup" element={<SignInPage defaultTab="signup" />} />
+          <Route path="/auth/callback" element={<AuthCallbackPage />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
           <Route path="/cart" element={<ShoppingCartPage />} />
         </Routes>
@@ -82,3 +85,4 @@ function App() {
 }
 
 export default App;
+
