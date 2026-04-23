@@ -33,7 +33,7 @@ const Recommendations = ({ title = "Recommended For You" }) => {
   return (
     <section className="recommendations-section">
       <div className="recommendations-container">
-        <h2>{title}</h2>
+        <h2 className="recommendations-title">{title}</h2>
         <div className="recommendations-grid">
           {products.map((product) => (
             <ProductCard key={product._id} product={product} />
